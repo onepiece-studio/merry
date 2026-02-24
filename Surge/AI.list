@@ -33,6 +33,7 @@ DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN,copilot.microsoft.com
 
 # > Cursor
+DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 
 # > Dify.AI
