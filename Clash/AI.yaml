@@ -12,6 +12,7 @@ payload:
   - DOMAIN,o33249.ingest.sentry.io
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN,gateway.ai.cloudflare.com
   - DOMAIN-SUFFIX,githubcopilot.com
