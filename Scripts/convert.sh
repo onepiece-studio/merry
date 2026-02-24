@@ -4,9 +4,9 @@ echo "开始转换 Surge 规则到 Clash 格式..."
 mkdir -p Clash
 
 count=0
-for file in *.list; do
+for file in Surge/*.list; do
     [ -f "$file" ] || continue
-    name="${file%.list}"
+    name="$(basename "${file%.list}")"
     echo "  转换: $file -> Clash/${name}.yaml"
     {
         echo "payload:"

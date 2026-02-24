@@ -3,7 +3,7 @@ name: Convert Surge to Clash
 on:
   push:
     branches: [main]
-    paths: ['*.list']
+    paths: ['Surge/*.list']
   workflow_dispatch:
 
 jobs:
