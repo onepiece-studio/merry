@@ -1,0 +1,24 @@
+name: Convert Surge to Clash
+
+on:
+  push:
+    branches: [main]
+    paths: ['*.list']
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert rules
+        run: bash Scripts/convert.sh
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Clash/
+          git diff --cached --quiet || git commit -m "chore: update clash rules"
+          git push
