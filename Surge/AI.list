@@ -105,3 +105,18 @@ DOMAIN-SUFFIX,zed.dev
 
 # > Ollama
 DOMAIN-SUFFIX,ollama.com
+
+# > Grep
+DOMAIN-SUFFIX,grep.app
+
+# > OpenClaw
+DOMAIN-SUFFIX,openclaw.ai
+
+# > ZAI
+DOMAIN-SUFFIX,z.ai
+DOMAIN-SUFFIX,zread.ai
+
+# > Search
+DMAIN-SUFFIX,exa.ai
+DMAIN-SUFFIX,tavily.com
+DMAIN-SUFFIX,brave.com
