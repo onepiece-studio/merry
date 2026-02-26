@@ -56,3 +56,10 @@ payload:
   - DOMAIN,sora-cdn.oaistatic.com
   - DOMAIN-SUFFIX,zed.dev
   - DOMAIN-SUFFIX,ollama.com
+  - DOMAIN-SUFFIX,grep.app
+  - DOMAIN-SUFFIX,openclaw.ai
+  - DOMAIN-SUFFIX,z.ai
+  - DOMAIN-SUFFIX,zread.ai
+  - DMAIN-SUFFIX,exa.ai
+  - DMAIN-SUFFIX,tavily.com
+  - DMAIN-SUFFIX,brave.com
