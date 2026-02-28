@@ -60,6 +60,6 @@ payload:
   - DOMAIN-SUFFIX,openclaw.ai
   - DOMAIN-SUFFIX,z.ai
   - DOMAIN-SUFFIX,zread.ai
-  - DMAIN-SUFFIX,exa.ai
-  - DMAIN-SUFFIX,tavily.com
-  - DMAIN-SUFFIX,brave.com
+  - DOMAIN-SUFFIX,exa.ai
+  - DOMAIN-SUFFIX,tavily.com
+  - DOMAIN-SUFFIX,brave.com

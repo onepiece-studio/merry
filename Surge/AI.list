@@ -117,6 +117,6 @@ DOMAIN-SUFFIX,z.ai
 DOMAIN-SUFFIX,zread.ai
 
 # > Search
-DMAIN-SUFFIX,exa.ai
-DMAIN-SUFFIX,tavily.com
-DMAIN-SUFFIX,brave.com
+DOMAIN-SUFFIX,exa.ai
+DOMAIN-SUFFIX,tavily.com
+DOMAIN-SUFFIX,brave.com
