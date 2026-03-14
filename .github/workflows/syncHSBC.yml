@@ -1,0 +1,35 @@
+name: Sync HSBC Rules
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  syncHSBC:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch HSBC.list
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/KIDA-MNESIA/gadgets/main/geosite/hsbc.list" \
+            -o Surge/HSBC.list
+
+      - name: Fetch HSBC-CN.list
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/KIDA-MNESIA/gadgets/main/geosite/hsbc-cn.list" \
+            -o Surge/HSBC-CN.list
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: 'Surge/'
+          message: "chore: sync HSBC rules from KIDA-MNESIA/gadgets"
+          push: "origin HEAD:main"
