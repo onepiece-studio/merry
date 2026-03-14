@@ -1,4 +1,4 @@
-name: syncHSBC
+name: Sync HSBC Rules
 
 on:
   schedule:

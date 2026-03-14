@@ -4,13 +4,21 @@ on:
   push:
     branches: [main]
     paths: ['Surge/*.list']
+  workflow_run:
+    workflows: ["Sync HSBC Rules"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   convert:
     runs-on: ubuntu-latest
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Convert rules
         run: bash Scripts/convert.sh
