@@ -1,0 +1,11 @@
+# 高风险域名
+
+# https://2libra.com/post/network-security/8HvXoR_
+DOMAIN-SUFFIX,apifox.it.com
+DOMAIN-SUFFIX,cdn.openroute.dev
+DOMAIN-SUFFIX,feishu.it.com
+DOMAIN-SUFFIX,system.toshinkyo.or.jp
+
+# https://safedep.io/malicious-litellm-1-82-8-analysis
+DOMAIN-SUFFIX,checkmarx.zone
+DOMAIN-SUFFIX,litellm.cloud
