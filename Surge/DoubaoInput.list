@@ -2,3 +2,5 @@
 
 # 遥测
 DOMAIN-SUFFIX,log.zijieapi.com
+DOMAIN-SUFFIX,log-klink.zijieapi.com
+DOMAIN-SUFFIX,pc-mon.zijieapi.com
