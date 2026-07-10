@@ -1,5 +1,5 @@
 # NAME: AI
-# UPDATED: 2025-10-02 00:53:00
+# UPDATED: 2026-07-10 00:00:00
 
 # > ChatGPT
 DOMAIN-SUFFIX,ai.com
@@ -13,10 +13,20 @@ DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 
-DOMAIN-SUFFIX,cdn.oaistatic.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
 
 DOMAIN,o33249.ingest.sentry.io
+
+# > Arkose 人机验证
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+
+# > ChatGPT Advanced Voice
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
 
 # > Claude
 DOMAIN-SUFFIX,anthropic.com
@@ -31,6 +41,8 @@ DOMAIN,gateway.ai.cloudflare.com
 DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN,copilot.microsoft.com
+DOMAIN,sydney.bing.com
+DOMAIN-SUFFIX,edgeservices.bing.com
 
 # > Cursor
 DOMAIN-SUFFIX,cursor.com
@@ -98,7 +110,6 @@ DOMAIN,gspe1-ssl.ls.apple.com
 
 # > Sora
 DOMAIN-SUFFIX,sora.com
-DOMAIN,sora-cdn.oaistatic.com
 
 # > Zed
 DOMAIN-SUFFIX,zed.dev
