@@ -21,12 +21,9 @@ DOMAIN,o33249.ingest.sentry.io
 
 # > Arkose 人机验证
 DOMAIN,openai-api.arkoselabs.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
 
 # > ChatGPT Advanced Voice
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
-DOMAIN-SUFFIX,host.livekit.cloud
-DOMAIN-SUFFIX,turn.livekit.cloud
 
 # > Claude
 DOMAIN-SUFFIX,anthropic.com
