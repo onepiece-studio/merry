@@ -1,0 +1,18 @@
+payload:
+  - DOMAIN,mcp.figma.com
+  - DOMAIN,mcp.notion.com
+  - DOMAIN,mcp.linear.app
+  - DOMAIN,mcp.sentry.dev
+  - DOMAIN,mcp.mixpanel.com
+  - DOMAIN,mcp.context7.com
+  - DOMAIN,mcp.grep.app
+  - DOMAIN,mcp.exa.ai
+  - DOMAIN,mcp.revenuecat.ai
+  - DOMAIN,mcp.stripe.com
+  - DOMAIN,mcp.atlassian.com
+  - DOMAIN,mcp.asana.com
+  - DOMAIN,mcp.paypal.com
+  - DOMAIN,mcp.vercel.com
+  - DOMAIN,mcp.neon.tech
+  - DOMAIN,mcp.deepwiki.com
+  - DOMAIN-SUFFIX,mcp.cloudflare.com
