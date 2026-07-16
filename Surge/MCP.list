@@ -1,0 +1,60 @@
+# NAME: MCP
+# UPDATED: 2026-07-15 00:00:00
+# 通用远程 MCP host (Claude Code / Codex / Gemini 共用) — 自包含, 不依赖 AI.list
+# 约定: 单 host 用 DOMAIN 精确 (不误伤厂商 production API); 多子域共享 MCP 专用父域时用 DOMAIN-SUFFIX
+
+# > Figma
+DOMAIN,mcp.figma.com
+
+# > Notion
+DOMAIN,mcp.notion.com
+
+# > Linear
+DOMAIN,mcp.linear.app
+
+# > Sentry
+DOMAIN,mcp.sentry.dev
+
+# > Mixpanel
+DOMAIN,mcp.mixpanel.com
+
+# > Context7
+DOMAIN,mcp.context7.com
+
+# > Grep
+DOMAIN,mcp.grep.app
+
+# > Exa
+DOMAIN,mcp.exa.ai
+
+# > RevenueCat
+DOMAIN,mcp.revenuecat.ai
+
+# > Stripe
+DOMAIN,mcp.stripe.com
+
+# > Atlassian (Jira / Confluence)
+DOMAIN,mcp.atlassian.com
+
+# > Asana
+DOMAIN,mcp.asana.com
+
+# > PayPal
+DOMAIN,mcp.paypal.com
+
+# > Vercel
+DOMAIN,mcp.vercel.com
+
+# > Neon
+DOMAIN,mcp.neon.tech
+
+# > DeepWiki
+DOMAIN,mcp.deepwiki.com
+
+# > Cloudflare (docs/bindings/observability/radar/builds... 全部 MCP 子域, 父域 mcp.cloudflare.com 为 MCP 专用)
+DOMAIN-SUFFIX,mcp.cloudflare.com
+
+# > GitHub Copilot — 暂缓, 未定
+# api.githubcopilot.com 是 Copilot 通用 API 域, MCP 仅为其 /mcp/ 路径;
+# Surge 只能匹配 host、匹配不到路径, 收进来会把补全/chat 全量 API 一并带进 MCP 分流。
+# DOMAIN,api.githubcopilot.com
