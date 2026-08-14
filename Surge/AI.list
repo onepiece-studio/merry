@@ -5,6 +5,7 @@
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.site
 
 # > Chat GPT API & CDN
 DOMAIN,chat.openai.com.cdn.cloudflare.net
