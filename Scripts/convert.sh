@@ -2,6 +2,7 @@
 
 echo "开始转换 Surge 规则到 Clash 格式..."
 mkdir -p Clash
+rm -f Clash/*.yaml
 
 count=0
 for file in Surge/*.list; do
