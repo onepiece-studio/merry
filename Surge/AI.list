@@ -3,6 +3,8 @@
 # 收录标准: 只收主流海外 AI 服务自身使用的域名, 国内厂商不收
 # 多服务共享且无法按 host 区分的基础设施, 仅在其服务于主流 AI 服务时兜底保留整域
 # Google 家另有子集 AI-Google.list, 与本文件的 Google 段逐条同步; 需单独控制 Google 出口时把它放在本 rule-set 之前
+# 兜底保留的共享 host: microsoftonline.com (Copilot 登录) / api.github.com (Copilot token) / oauth2.googleapis.com 与 apis.google.com (Gemini, Antigravity 登录)
+# 它们只在 URL 路径层面区分 AI 用途, Surge 对 HTTPS 匹配不到路径, 故整域保留
 
 # > ChatGPT
 DOMAIN-SUFFIX,ai.com

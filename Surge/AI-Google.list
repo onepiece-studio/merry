@@ -2,6 +2,8 @@
 # UPDATED: 2026-09-05 00:00:00
 # AI.list 的 Google 子集, 与 AI.list 的 Google 段逐条一致, 改动时两处同步
 # 用法: Surge 规则自上而下, 首个匹配生效; 把 RULE-SET AI-Google 放在 RULE-SET AI 之前, 即可单独指定 Google 家 AI 的出口
+# 注意: apis.google.com 与 oauth2.googleapis.com 是 Google 全家共用的 gapi / OAuth token 端点, Gemini 与 Antigravity 登录依赖它们,
+# 但 Surge 对 HTTPS 无法按路径区分, 故整域保留. 前置本清单后这两条会跟着 Google 出口走, 与其余 Google 账号流量同节点, 这是有意为之
 
 # > Google Gemini
 DOMAIN-SUFFIX,apis.google.com
