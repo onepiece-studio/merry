@@ -4,3 +4,6 @@
 CLAUDE.local.md
 .claude/*.local.md
 .claude/*.local.json
+
+# pr-review-loop 状态与会话 id
+.pr-review-loop/
