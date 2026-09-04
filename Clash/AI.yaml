@@ -22,21 +22,42 @@ payload:
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,microsoftonline.com
   - DOMAIN,copilot.microsoft.com
+  - DOMAIN,copilot.cloud.microsoft
+  - DOMAIN,m365.cloud.microsoft
   - DOMAIN,sydney.bing.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
+  - DOMAIN-SUFFIX,openai.azure.com
+  - DOMAIN-SUFFIX,ai.azure.com
   - DOMAIN-SUFFIX,cursor.com
   - DOMAIN-SUFFIX,cursor.sh
+  - DOMAIN-SUFFIX,windsurf.com
+  - DOMAIN-SUFFIX,codeium.com
+  - DOMAIN-SUFFIX,devin.ai
+  - DOMAIN-SUFFIX,kiro.dev
+  - DOMAIN-SUFFIX,cline.bot
+  - DOMAIN-SUFFIX,v0.app
+  - DOMAIN-SUFFIX,v0.dev
+  - DOMAIN-SUFFIX,manus.im
+  - DOMAIN-SUFFIX,opencode.ai
+  - DOMAIN-SUFFIX,openhands.dev
+  - DOMAIN-SUFFIX,all-hands.dev
+  - DOMAIN-SUFFIX,lovable.dev
+  - DOMAIN-SUFFIX,bolt.new
   - DOMAIN-SUFFIX,dify.ai
   - DOMAIN,api.github.com
   - DOMAIN-SUFFIX,apis.google.com
   - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,ai.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,geller-pa.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-  - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN-KEYWORD,aiplatform.googleapis.com
+  - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN-SUFFIX,ai.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,makersuite.google.com
   - DOMAIN-SUFFIX,generativeai.google
@@ -45,6 +66,10 @@ payload:
   - DOMAIN,waa-pa.clients6.google.com
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
+  - DOMAIN-SUFFIX,jules.google
+  - DOMAIN-SUFFIX,jules.google.com
+  - DOMAIN-SUFFIX,labs.google
+  - DOMAIN,stitch.withgoogle.com
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,cloudcode-pa.googleapis.com
   - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
@@ -53,22 +78,34 @@ payload:
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,grok.com
   - DOMAIN-SUFFIX,groq.com
+  - DOMAIN-SUFFIX,together.ai
+  - DOMAIN-SUFFIX,together.xyz
+  - DOMAIN-SUFFIX,fireworks.ai
+  - DOMAIN-SUFFIX,cerebras.ai
   - DOMAIN-SUFFIX,openrouter.ai
+  - DOMAIN-SUFFIX,huggingface.co
+  - DOMAIN-SUFFIX,hf.co
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,llama.com
+  - DOMAIN,ai.meta.com
+  - DOMAIN-SUFFIX,mistral.ai
+  - DOMAIN-SUFFIX,midjourney.com
   - DOMAIN-SUFFIX,perplexity.ai
+  - DOMAIN-SUFFIX,pplx.ai
   - DOMAIN-SUFFIX,poe.com
   - DOMAIN,apple-relay.apple.com
   - DOMAIN,apple-relay.cloudflare.com
   - DOMAIN,guzzoni.smoot.apple.com
-  - DOMAIN,gspe1-ssl.ls.apple.com
   - DOMAIN-SUFFIX,sora.com
   - DOMAIN-SUFFIX,zed.dev
   - DOMAIN-SUFFIX,ollama.com
+  - DOMAIN-SUFFIX,ollama.ai
   - DOMAIN-SUFFIX,grep.app
   - DOMAIN-SUFFIX,openclaw.ai
   - DOMAIN-SUFFIX,z.ai
   - DOMAIN-SUFFIX,zread.ai
   - DOMAIN-SUFFIX,exa.ai
   - DOMAIN-SUFFIX,tavily.com
-  - DOMAIN-SUFFIX,brave.com
+  - DOMAIN,api.search.brave.com
   - DOMAIN-SUFFIX,context7.com
   - DOMAIN-SUFFIX,tinyfish.ai
