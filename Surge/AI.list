@@ -1,5 +1,8 @@
 # NAME: AI
-# UPDATED: 2026-07-10 00:00:00
+# UPDATED: 2026-09-05 00:00:00
+# 收录标准: 只收主流海外 AI 服务自身使用的域名, 国内厂商不收
+# 多服务共享且无法按 host 区分的基础设施, 仅在其服务于主流 AI 服务时兜底保留整域
+# Google 家另有子集 AI-Google.list, 与本文件的 Google 段逐条同步; 需单独控制 Google 出口时把它放在本 rule-set 之前
 
 # > ChatGPT
 DOMAIN-SUFFIX,ai.com
@@ -39,12 +42,51 @@ DOMAIN,gateway.ai.cloudflare.com
 DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN,copilot.microsoft.com
+DOMAIN,copilot.cloud.microsoft
+DOMAIN,m365.cloud.microsoft
 DOMAIN,sydney.bing.com
 DOMAIN-SUFFIX,edgeservices.bing.com
+
+# > Azure OpenAI / AI Foundry
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,ai.azure.com
 
 # > Cursor
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
+
+# > Windsurf
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,codeium.com
+
+# > Devin
+DOMAIN-SUFFIX,devin.ai
+
+# > Kiro
+DOMAIN-SUFFIX,kiro.dev
+
+# > Cline
+DOMAIN-SUFFIX,cline.bot
+
+# > v0
+DOMAIN-SUFFIX,v0.app
+DOMAIN-SUFFIX,v0.dev
+
+# > Manus
+DOMAIN-SUFFIX,manus.im
+
+# > OpenCode
+DOMAIN-SUFFIX,opencode.ai
+
+# > OpenHands
+DOMAIN-SUFFIX,openhands.dev
+DOMAIN-SUFFIX,all-hands.dev
+
+# > Lovable
+DOMAIN-SUFFIX,lovable.dev
+
+# > Bolt
+DOMAIN-SUFFIX,bolt.new
 
 # > Dify.AI
 DOMAIN-SUFFIX,dify.ai
@@ -55,9 +97,11 @@ DOMAIN,api.github.com
 # > Google Gemini
 DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,gemini.google
 DOMAIN-SUFFIX,gemini.google.com
 
-# > Google DeepMind
+# > Google AI & DeepMind
+DOMAIN-SUFFIX,ai.google
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 
@@ -66,8 +110,12 @@ DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 
+# > Google Vertex AI (含 {region}-aiplatform 前缀主机)
+DOMAIN-KEYWORD,aiplatform.googleapis.com
+
 # > Google AI Studio
-DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,ai.dev
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,generativeai.google
@@ -78,6 +126,16 @@ DOMAIN,waa-pa.clients6.google.com
 # > Google NotebookLM
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
+
+# > Google Jules
+DOMAIN-SUFFIX,jules.google
+DOMAIN-SUFFIX,jules.google.com
+
+# > Google Labs (Flow / Whisk / ImageFX)
+DOMAIN-SUFFIX,labs.google
+
+# > Google Stitch
+DOMAIN,stitch.withgoogle.com
 
 # > Google Antigravity
 DOMAIN,oauth2.googleapis.com
@@ -93,11 +151,37 @@ DOMAIN-SUFFIX,grok.com
 # > Groq
 DOMAIN-SUFFIX,groq.com
 
+# > Together AI
+DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,together.xyz
+
+# > Fireworks AI
+DOMAIN-SUFFIX,fireworks.ai
+
+# > Cerebras
+DOMAIN-SUFFIX,cerebras.ai
+
 # > OpenRouter
 DOMAIN-SUFFIX,openrouter.ai
 
+# > Hugging Face
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+
+# > Meta AI
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.com
+DOMAIN,ai.meta.com
+
+# > Mistral
+DOMAIN-SUFFIX,mistral.ai
+
+# > Midjourney
+DOMAIN-SUFFIX,midjourney.com
+
 # > Perplexity AI
 DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
 
 # > POE
 DOMAIN-SUFFIX,poe.com
@@ -106,7 +190,6 @@ DOMAIN-SUFFIX,poe.com
 DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,guzzoni.smoot.apple.com
-DOMAIN,gspe1-ssl.ls.apple.com
 
 # > Sora
 DOMAIN-SUFFIX,sora.com
@@ -116,6 +199,7 @@ DOMAIN-SUFFIX,zed.dev
 
 # > Ollama
 DOMAIN-SUFFIX,ollama.com
+DOMAIN-SUFFIX,ollama.ai
 
 # > Grep
 DOMAIN-SUFFIX,grep.app
@@ -130,6 +214,6 @@ DOMAIN-SUFFIX,zread.ai
 # > Search
 DOMAIN-SUFFIX,exa.ai
 DOMAIN-SUFFIX,tavily.com
-DOMAIN-SUFFIX,brave.com
+DOMAIN,api.search.brave.com
 DOMAIN-SUFFIX,context7.com
 DOMAIN-SUFFIX,tinyfish.ai
