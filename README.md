@@ -1,6 +1,6 @@
 # merry
 
-Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、券商、汇丰、输入法和高风险域名。规则以 Surge 格式维护，Clash 格式自动生成，两者内容一致。
+Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、券商、汇丰、输入法、IP 检测站点和高风险域名。规则以 Surge 格式维护，Clash 格式自动生成，两者内容一致。
 
 ## 订阅地址
 
@@ -30,6 +30,7 @@ https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/
 | [HSBC-CN](Surge/HSBC-CN.list) | 汇丰中国站点，同上自动同步 | 直连 |
 | [DoubaoInput](Surge/DoubaoInput.list) | 豆包语音输入法的联网域名 | 按需 |
 | [SogouInput](Surge/SogouInput.list) | 搜狗输入法的联网域名 | 按需 |
+| [IPCheck](Surge/IPCheck.list) | 出口 IP、IP 质量、DNS / WebRTC 泄漏、IPv6、ASN 查询站点：ping0.cc、ip.skk.moe、ipcheck.ing、ip.sb、browserleaks、whoer 等 | 单独的 select 组 |
 | [Security](Surge/Security.list) | 已知钓鱼与供应链投毒域名 | REJECT |
 
 Clash 用户把路径中的 `Surge/xxx.list` 换成 `Clash/xxx.yaml` 即可，文件名一一对应。
@@ -48,6 +49,8 @@ RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Security.l
 如果不需要把 Google AI 分开，只引用 AI 一条即可，它已经包含 Google 的全部条目。
 
 引用 AI-Google 后，Google 账号通用的 `oauth2.googleapis.com` 和 `apis.google.com` 也会走 Google 节点。Gemini 和 Antigravity 登录依赖这两个域名，Surge 无法按 URL 路径区分，让它们与其他 Google 账号流量走同一节点也更稳定。
+
+IPCheck 要放在所有代理大清单之前，因为 whoer.net、ping0.cc 这类域名也常被通用 Proxy 清单收录。它只收海外站点，ip.cn、ip138.com 这类大陆站不收，它们本就直连，展示的正是「国内视角」，ip.skk.moe 和 ipcheck.ing 调用它们也是为了做国内外对比。STUN 服务器与 Google、YouTube 这类连通性测试目标同样不收，它们是被测对象，走本组会让结果失真。另外 ipinfo.io、ip-api.com、ipify.org 也被不少 App 用来做地理定位，收录后这些请求会跟着本组走，这是品类固有的副作用。
 
 ## Clash / Mihomo
 

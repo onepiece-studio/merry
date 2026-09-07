@@ -1,0 +1,56 @@
+# NAME: IPCheck
+# UPDATED: 2026-09-07 00:00:00
+# 出口 IP / IP 质量 / DNS 与 WebRTC 泄漏 / IPv6 / ASN 查询站点, 指到一个策略组后切节点看出口
+# 约定: 站点自有域名整域收 (含其 API / 探针子域); 站点前端直连的第三方 IP 源与 DNS 泄漏探针根域也收, 否则多源结果会混;
+#       不收大陆站 (ip.cn / ip138 / cip.cc / myip.ipip.net), 它们本就直连, 展示的正是"国内视角";
+#       不收 STUN 与第三方连通性目标 (google / youtube / cloudflare trace), 它们是被测对象, 走本组会让结果失真;
+#       skk.moe 只收子域, apex 下的 ruleset.skk.moe 是规则集分发, 不能拖进来
+
+# > IP 质量 / 综合检测
+DOMAIN-SUFFIX,ping0.cc
+DOMAIN-SUFFIX,ip.skk.moe
+DOMAIN-SUFFIX,api.skk.moe
+DOMAIN,latency-test.skk.moe
+DOMAIN-SUFFIX,ipcheck.ing
+DOMAIN-SUFFIX,scamalytics.com
+DOMAIN-SUFFIX,ipqualityscore.com
+DOMAIN-SUFFIX,ip2location.io
+DOMAIN-SUFFIX,ipapi.is
+
+# > 出口 IP 查询
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ip.me
+DOMAIN-SUFFIX,ip.fm
+DOMAIN-SUFFIX,ip.im
+DOMAIN-SUFFIX,ipv4.im
+DOMAIN-SUFFIX,ipinfo.io
+DOMAIN-SUFFIX,ip-api.com
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,myexternalip.com
+DOMAIN-SUFFIX,icanhazip.com
+DOMAIN-SUFFIX,ifconfig.me
+DOMAIN-SUFFIX,ifconfig.co
+DOMAIN-SUFFIX,whatismyipaddress.com
+DOMAIN-SUFFIX,whatismyipaddress.info
+DOMAIN-SUFFIX,check.place
+DOMAIN,us.ip111.cn
+
+# > DNS / WebRTC 泄漏
+DOMAIN-SUFFIX,ipleak.net
+DOMAIN-SUFFIX,browserleaks.com
+DOMAIN-SUFFIX,browserleaks.net
+DOMAIN-SUFFIX,browserleaks.org
+DOMAIN-SUFFIX,dnsleaktest.com
+DOMAIN-SUFFIX,dnscheck.tools
+DOMAIN-SUFFIX,whoer.net
+DOMAIN-SUFFIX,whox.is
+DOMAIN-SUFFIX,surfsharkdns.com
+DOMAIN-SUFFIX,fastly-analytics.com
+
+# > IPv6
+DOMAIN-SUFFIX,test-ipv6.com
+DOMAIN-SUFFIX,ipv6-test.com
+
+# > ASN / BGP
+DOMAIN-SUFFIX,bgp.he.net
+DOMAIN-SUFFIX,bgp.tools
