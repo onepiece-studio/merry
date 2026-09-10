@@ -5,5 +5,8 @@ CLAUDE.local.md
 .claude/*.local.md
 .claude/*.local.json
 
+# handoff 会话交接记录
+.handoff/
+
 # pr-review-loop 状态与会话 id
 .pr-review-loop/
