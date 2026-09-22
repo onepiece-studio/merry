@@ -173,6 +173,8 @@ DOMAIN-SUFFIX,hf.co
 # > Meta AI
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,llama.com
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,muse.ai
 DOMAIN,ai.meta.com
 
 # > Mistral
@@ -219,3 +221,6 @@ DOMAIN-SUFFIX,tavily.com
 DOMAIN,api.search.brave.com
 DOMAIN-SUFFIX,context7.com
 DOMAIN-SUFFIX,tinyfish.ai
+
+# > JEV
+DOMAIN-SUFFIX,typesafe.ai
