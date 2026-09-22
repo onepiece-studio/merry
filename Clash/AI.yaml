@@ -87,6 +87,8 @@ payload:
   - DOMAIN-SUFFIX,hf.co
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,llama.com
+  - DOMAIN-SUFFIX,metaaivm.com
+  - DOMAIN-SUFFIX,muse.ai
   - DOMAIN,ai.meta.com
   - DOMAIN-SUFFIX,mistral.ai
   - DOMAIN-SUFFIX,midjourney.com
@@ -109,3 +111,4 @@ payload:
   - DOMAIN,api.search.brave.com
   - DOMAIN-SUFFIX,context7.com
   - DOMAIN-SUFFIX,tinyfish.ai
+  - DOMAIN-SUFFIX,typesafe.ai
