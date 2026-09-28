@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['Surge/*.list']
   workflow_run:
-    workflows: ["Sync HSBC Rules"]
+    workflows: ["Sync Upstream Rules"]
     types: [completed]
   workflow_dispatch:
 

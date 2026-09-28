@@ -1,0 +1,36 @@
+name: Sync Upstream Rules
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  syncUpstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Sync rules from KIDA-MNESIA/gadgets
+        run: |
+          set -eo pipefail
+          base=https://raw.githubusercontent.com/KIDA-MNESIA/gadgets/main/geosite
+          while read -r src dst; do
+            curl -fsSL "$base/$src.list" -o "Surge/$dst.list"
+          done <<'LIST'
+          hsbc HSBC
+          hsbc-cn HSBC-CN
+          standardchartered StandardChartered
+          ibkr IBKR
+          wise Wise
+          LIST
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          file_pattern: 'Surge/'
+          commit_message: "chore: sync upstream rules from KIDA-MNESIA/gadgets"
+          branch: main
