@@ -29,7 +29,6 @@ https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/
 | [HSBC](Surge/HSBC.list) | 汇丰全球站点，每日从 [KIDA-MNESIA/gadgets](https://github.com/KIDA-MNESIA/gadgets) 同步 | 按需 |
 | [HSBC-CN](Surge/HSBC-CN.list) | 汇丰中国站点，同上自动同步 | 直连 |
 | [StandardChartered](Surge/StandardChartered.list) | 渣打全球站点，每日从 KIDA-MNESIA/gadgets 同步 | 按需 |
-| [StandardChartered-CN](Surge/StandardChartered-CN.list) | 渣打中国的国内托管站点（网银、积分等），手工维护 | 直连 |
 | [IBKR](Surge/IBKR.list) | 盈透证券各地区站点，每日从 KIDA-MNESIA/gadgets 同步 | 按需 |
 | [Wise](Surge/Wise.list) | Wise 跨境汇款，每日从 KIDA-MNESIA/gadgets 同步 | 按需 |
 | [DoubaoInput](Surge/DoubaoInput.list) | 豆包语音输入法的联网域名 | 按需 |
@@ -54,7 +53,7 @@ RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Security.l
 
 引用 AI-Google 后，Google 账号通用的 `oauth2.googleapis.com` 和 `apis.google.com` 也会走 Google 节点。Gemini 和 Antigravity 登录依赖这两个域名，Surge 无法按 URL 路径区分，让它们与其他 Google 账号流量走同一节点也更稳定。
 
-HSBC-CN、StandardChartered-CN 要分别放在 HSBC、StandardChartered 之前。渣打中国的 `cn.sc.com` 同时被全球规则里的 `sc.com` 覆盖，顺序反了就会走代理。渣打中国官网 `www.sc.com/cn/` 与全球站同域名，只按路径区分，无法单独直连。
+HSBC-CN 要放在 HSBC 之前，顺序反了汇丰中国站点就会走代理。渣打不分中国与全球：渣打中国官网 `www.sc.com/cn/` 与全球站同域名，只按路径区分，按域名拆不开，所以只有一份规则。
 
 IPCheck 要放在所有代理大清单之前，因为 whoer.net、ping0.cc 这类域名也常被通用 Proxy 清单收录。它只收海外站点，ip.cn、ip138.com 这类大陆站不收，它们本就直连，展示的正是「国内视角」，ip.skk.moe 和 ipcheck.ing 调用它们也是为了做国内外对比。STUN 服务器与 Google、YouTube 这类连通性测试目标同样不收，它们是被测对象，走本组会让结果失真。另外 ipinfo.io、ip-api.com、ipify.org 也被不少 App 用来做地理定位，收录后这些请求会跟着本组走，这是品类固有的副作用。
 
