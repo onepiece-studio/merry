@@ -16,6 +16,9 @@ DOMAIN-SUFFIX,scamalytics.com
 DOMAIN-SUFFIX,ipqualityscore.com
 DOMAIN-SUFFIX,ip2location.io
 DOMAIN-SUFFIX,ipapi.is
+DOMAIN-SUFFIX,iplark.com
+DOMAIN-SUFFIX,ippure.com
+DOMAIN-SUFFIX,ip.net.coffee
 
 # > 出口 IP 查询
 DOMAIN-SUFFIX,ip.sb
