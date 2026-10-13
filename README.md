@@ -10,6 +10,12 @@ Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、券�
 https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/
 ```
 
+如果所在地区无法正常访问 [JSDelivr](https://cdn.jsdelivr.com/), 可使用 [JSDMirror](https://cdn.jsdmirror.com) 代替：
+
+```
+https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
+```
+
 在这个前缀后面接上规则文件路径即可，例如 `Surge/AI.list` 或 `Clash/AI.yaml`。
 
 | 情况 | 处理方式 |
