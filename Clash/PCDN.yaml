@@ -1,0 +1,5 @@
+payload:
+  - DOMAIN,httpdns.bilivideo.com
+  - DOMAIN-SUFFIX,edge.mountaintoys.cn
+  - DOMAIN-SUFFIX,mcdn.bilivideo.com
+  - DOMAIN-SUFFIX,mcdn.bilivideo.cn
