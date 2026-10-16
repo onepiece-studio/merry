@@ -1,0 +1,8 @@
+# NAME: PCDN
+# UPDATED: 2026-10-16 21:39:00
+
+# > bilibili
+DOMAIN,httpdns.bilivideo.com
+DOMAIN-SUFFIX,edge.mountaintoys.cn
+DOMAIN-SUFFIX,mcdn.bilivideo.com
+DOMAIN-SUFFIX,mcdn.bilivideo.cn
