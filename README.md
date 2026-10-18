@@ -29,6 +29,7 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 |---|---|---|
 | [AI](Surge/AI.list) | 主流海外 AI 服务：ChatGPT、Claude、Gemini、Copilot、Cursor、OpenHands、Together 等 | 代理 |
 | [AI-Google](Surge/AI-Google.list) | AI 规则中的 Google 部分：Gemini、AI Studio、NotebookLM、Jules、Antigravity、Vertex AI | 需要让 Google AI 单独走一个节点时使用 |
+| [Claude](Surge/Claude.list) | AI 规则中的 Claude 部分：claude.ai、Claude Code、Anthropic API、MCP 小组件、artifact 分享页 | 需要让 Claude 单独走一个节点时使用 |
 | [MCP](Surge/MCP.list) | 常见远程 MCP 服务：Figma、Notion、Linear、Sentry、Cloudflare 等 | 代理 |
 | [Web3](Surge/Web3.list) | 钱包与链上服务：MetaMask、Phantom 等 | 代理 |
 | [Broker](Surge/Broker.list) | 券商：富途 / moomoo、长桥、老虎、嘉信 | 按需 |
@@ -46,16 +47,17 @@ Clash 用户把路径中的 `Surge/xxx.list` 换成 `Clash/xxx.yaml` 即可，�
 
 ## Surge
 
-在 `[Rule]` 中引用。Surge 自上而下匹配，命中第一条就停止，所以 AI-Google 要放在 AI 前面：
+在 `[Rule]` 中引用。Surge 自上而下匹配，命中第一条就停止，所以 AI-Google 和 Claude 要放在 AI 前面：
 
 ```
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/AI-Google.list,Google
+RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Claude.list,Claude
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/AI.list,AI
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/MCP.list,Proxy
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Security.list,REJECT
 ```
 
-如果不需要把 Google AI 分开，只引用 AI 一条即可，它已经包含 Google 的全部条目。
+如果不需要把 Google AI 或 Claude 分开，只引用 AI 一条即可，它已经包含两者的全部条目。
 
 引用 AI-Google 后，Google 账号通用的 `oauth2.googleapis.com` 和 `apis.google.com` 也会走 Google 节点。Gemini 和 Antigravity 登录依赖这两个域名，Surge 无法按 URL 路径区分，让它们与其他 Google 账号流量走同一节点也更稳定。
 
