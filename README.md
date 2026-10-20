@@ -67,7 +67,7 @@ HSBC-CN 要放在 HSBC 之前，顺序反了汇丰中国站点就会走代理。
 
 IPCheck 要放在所有代理大清单之前，因为 whoer.net、ping0.cc 这类域名也常被通用 Proxy 清单收录。它只收海外站点，ip.cn、ip138.com 这类大陆站不收，它们本就直连，展示的正是「国内视角」，ip.skk.moe 和 ipcheck.ing 调用它们也是为了做国内外对比。STUN 服务器与 Google、YouTube 这类连通性测试目标同样不收，它们是被测对象，走本组会让结果失真。另外 ipinfo.io、ip-api.com、ipify.org 也被不少 App 用来做地理定位，收录后这些请求会跟着本组走，这是品类固有的副作用。
 
-PCDN 要放在所有国内直连 / 媒体规则集之前，例如 blackmatrix7 的 Direct、BiliBili、ChinaMedia 以及 `GEOSITE,CN` / `GEOIP,CN`，因为这些集合包含 bilivideo.com、szbdyd.com 等后缀，顺序反了 PCDN 节点会被直连放行。策略用 `REJECT-NO-DROP`：`REJECT-DROP` 静默丢包，客户端要等超时才回落，起播变慢；普通 `REJECT` 在高频重试下会被 Surge 自动升级为 DROP。`extended-matching` 让规则同时匹配 SNI 与 HTTP Host，App 直接用 IP 连接时也能命中。收录要求至少两个独立来源确认是 PCDN / P2P，且没有拦截后功能损坏的报告，当前只覆盖 B 站。它只覆盖域名形式的节点，IP:端口形式的 PCDN 和 WebRTC 直连拦不到；`extended-matching` 只在 TCP 80 / 443 上嗅探 SNI 与 HTTP Host，App 直接用 IP 连接非标准端口（如 B 站 MCDN 常用的 4483、8082）或走 QUIC 时同样拦不到，经 Surge DNS 解析、带主机名的连接则不受端口和协议限制；个别地区的个别视频只下发 MCDN 地址时，可能无法播放。
+PCDN 要放在所有国内直连 / 媒体规则集之前，例如 blackmatrix7 的 Direct、BiliBili、ChinaMedia 以及 `GEOSITE,CN` / `GEOIP,CN`，因为这些集合包含 bilivideo.com、szbdyd.com 等后缀，顺序反了 PCDN 节点会被直连放行。策略用 `REJECT-NO-DROP`：`REJECT-DROP` 静默丢包，客户端要等超时才回落，起播变慢；普通 `REJECT` 在高频重试下会被 Surge 自动升级为 DROP。`extended-matching` 让规则同时匹配 SNI 与 HTTP Host，App 在 TCP 80 / 443 上直接用 IP 连接时也能命中。收录要求至少两个独立来源确认是 PCDN / P2P，且没有拦截后功能损坏的报告，当前只覆盖 B 站。它只覆盖域名形式的节点，IP:端口形式的 PCDN 和 WebRTC 直连拦不到；`extended-matching` 只在 TCP 80 / 443 上嗅探 SNI 与 HTTP Host，App 直接用 IP 连接非标准端口（如 B 站 MCDN 常用的 4483、8082）或走 QUIC 时同样拦不到，经 Surge DNS 解析、带主机名的连接则不受端口和协议限制；个别地区的个别视频只下发 MCDN 地址时，可能无法播放。
 
 ## Clash / Mihomo
 
