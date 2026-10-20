@@ -3,3 +3,23 @@ payload:
   - DOMAIN-SUFFIX,edge.mountaintoys.cn
   - DOMAIN-SUFFIX,mcdn.bilivideo.com
   - DOMAIN-SUFFIX,mcdn.bilivideo.cn
+  - DOMAIN,upos-sz-302ppio.bilivideo.com
+  - DOMAIN,upos-sz-302kodo.bilivideo.com
+  - DOMAIN-SUFFIX,nexusedgeio.com
+  - DOMAIN,stun.chat.bilibili.com
+  - DOMAIN-SUFFIX,szbdyd.com
+  - DOMAIN-SUFFIX,p2p.qq.com
+  - DOMAIN-SUFFIX,p2ptun.qq.com
+  - DOMAIN,p2pupdate.gamedl.qq.com
+  - DOMAIN,p2pupgrade.gamedl.qq.com
+  - DOMAIN,stun.qqlive.qq.com
+  - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
+  - DOMAIN,apd-pcdnwxnat.teg.tencent-cloud.net
+  - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+  - DOMAIN,apd-pcdnvodstat.teg.tencent-cloud.net
+  - DOMAIN-SUFFIX,pcdn.yximgs.com
+  - DOMAIN,slb-p2p.vcloud.ks-live.com
+  - DOMAIN,stun.hitv.com
+  - DOMAIN-SUFFIX,kuiniuca.com
+  - DOMAIN-SUFFIX,pkoplink.com
+  - DOMAIN-SUFFIX,ietheivaicai.com
