@@ -1,8 +1,45 @@
 # NAME: PCDN
-# UPDATED: 2026-10-16 21:39:00
+# UPDATED: 2026-10-20 19:47:05
+# 视频 / 直播平台的 PCDN、MCDN 节点与 P2P 调度 / STUN, 拒绝后客户端回落正规 CDN
+# 约定: 至少两个独立来源确认是 PCDN / P2P, 且无拦截后功能损坏的报告才收;
+#       虎牙、斗鱼直播 P2P、迅雷 xycdn 有损坏报告或副作用, 不收; 不用 KEYWORD / WILDCARD / IP
 
 # > bilibili
+# B 站 App 的 HTTPDNS, 拒绝后 App 回落系统 DNS, 其余域名规则才能命中
 DOMAIN,httpdns.bilivideo.com
 DOMAIN-SUFFIX,edge.mountaintoys.cn
 DOMAIN-SUFFIX,mcdn.bilivideo.com
 DOMAIN-SUFFIX,mcdn.bilivideo.cn
+DOMAIN,upos-sz-302ppio.bilivideo.com
+DOMAIN,upos-sz-302kodo.bilivideo.com
+DOMAIN-SUFFIX,nexusedgeio.com
+DOMAIN,stun.chat.bilibili.com
+# 节点之家 PCDN
+DOMAIN-SUFFIX,szbdyd.com
+
+# > 腾讯
+DOMAIN-SUFFIX,p2p.qq.com
+DOMAIN-SUFFIX,p2ptun.qq.com
+DOMAIN,p2pupdate.gamedl.qq.com
+DOMAIN,p2pupgrade.gamedl.qq.com
+DOMAIN,stun.qqlive.qq.com
+# 腾讯 PCDN SDK
+DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
+DOMAIN,apd-pcdnwxnat.teg.tencent-cloud.net
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+DOMAIN,apd-pcdnvodstat.teg.tencent-cloud.net
+
+# > 快手
+DOMAIN-SUFFIX,pcdn.yximgs.com
+DOMAIN,slb-p2p.vcloud.ks-live.com
+
+# > 芒果 TV
+DOMAIN,stun.hitv.com
+
+# > PCDN 厂商
+# 网心星域 SDK
+DOMAIN-SUFFIX,kuiniuca.com
+# 节点之家
+DOMAIN-SUFFIX,pkoplink.com
+# 七牛牛链云
+DOMAIN-SUFFIX,ietheivaicai.com
