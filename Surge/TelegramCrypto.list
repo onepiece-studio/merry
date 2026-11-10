@@ -1,0 +1,26 @@
+# NAME: TelegramCrypto
+# UPDATED: 2026-11-10 19:42:56
+# Telegram 生态的钱包与加密服务: Telegram 内置钱包实际访问的域名, 以及 Telegram 自营 / 主导 / 原官方的加密服务
+# 约定: 内置钱包主体走 MTProto, 由 Telegram 规则集覆盖, 这里只补直连的域名;
+#       TON 生态独立第三方 (Keeper、TonAPI、My Wallet、Getgems、STON.fi 等) 不收, 归 Web3
+
+# > Money (Telegram 内置钱包, 官方名 Gram Wallet): 实时推送直连 toncenter
+DOMAIN-SUFFIX,toncenter.com
+
+# > Gram Wallet 独立版 (网页版 wallet.ton.org 由下方 ton.org 覆盖)
+DOMAIN-SUFFIX,gramwallet.io
+
+# > Fragment (用户名、号码、Stars、广告提现)
+DOMAIN-SUFFIX,fragment.com
+
+# > TON / Gram 官方 (2026-05 起由 Telegram 主导)
+DOMAIN-SUFFIX,ton.org
+
+# > Walt (原 Wallet in Telegram, @wallet / @walt), Money 的入金渠道
+DOMAIN-SUFFIX,walletbot.me
+DOMAIN-SUFFIX,wallettg.com
+DOMAIN-SUFFIX,wallettg.net
+DOMAIN-SUFFIX,walt.io
+DOMAIN-SUFFIX,wallet.tg
+DOMAIN,wallet.helpscoutdocs.com
+DOMAIN,walletru.helpscoutdocs.com

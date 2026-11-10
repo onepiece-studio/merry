@@ -1,5 +1,5 @@
 # NAME: Web3
-# UPDATED: 2025-10-02 01:00:00
+# UPDATED: 2026-11-10 19:42:56
 DOMAIN-SUFFIX,metamask.io
 DOMAIN-SUFFIX,phantom.com
 DOMAIN-SUFFIX,phantom.app
@@ -10,3 +10,28 @@ DOMAIN-SUFFIX,oortech.com
 DOMAIN-SUFFIX,gmgn.ai
 DOMAIN-SUFFIX,gmgn.mobi
 DOMAIN-SUFFIX,helius-rpc.com
+
+# > TON 生态 (Telegram 自营 / 主导部分见 TelegramCrypto)
+# Keeper (原 Tonkeeper) 与 TonAPI / Tonviewer
+DOMAIN-SUFFIX,keeperwallet.com
+DOMAIN-SUFFIX,tonkeeper.com
+DOMAIN-SUFFIX,tonapi.io
+DOMAIN-SUFFIX,tonviewer.com
+DOMAIN-SUFFIX,tonconsole.com
+# My Wallet (原 MyTonWallet), 也是 Gram Wallet 独立版的后端
+DOMAIN-SUFFIX,mywallet.io
+DOMAIN-SUFFIX,mytonwallet.org
+DOMAIN-SUFFIX,mytonwallet.io
+# Tonhub
+DOMAIN-SUFFIX,tonhub.com
+DOMAIN-SUFFIX,tonhubapi.com
+# Getgems (NFT / 礼物市场)
+DOMAIN-SUFFIX,getgems.io
+# STON.fi / DeDust (DEX)
+DOMAIN-SUFFIX,ston.fi
+DOMAIN-SUFFIX,dedust.io
+# Tonstakers (流动性质押)
+DOMAIN-SUFFIX,tonstakers.com
+# 区块浏览器
+DOMAIN-SUFFIX,tonscan.org
+DOMAIN-SUFFIX,tonscan.com
