@@ -1,6 +1,6 @@
 # merry
 
-Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、Telegram 加密服务、券商、汇丰、输入法、IP 检测站点、高风险域名和 B 站 PCDN 节点。规则以 Surge 格式维护，Clash 格式自动生成，两者内容一致。
+Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、Telegram 加密货币、券商、汇丰、输入法、IP 检测站点、高风险域名和 B 站 PCDN 节点。规则以 Surge 格式维护，Clash 格式自动生成，两者内容一致。
 
 ## 订阅地址
 
@@ -32,7 +32,7 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 | [Claude](Surge/Claude.list) | AI 规则中的 Claude 部分：claude.ai、Claude Code、Anthropic API、MCP 小组件、artifact 分享页 | 需要让 Claude 单独走一个节点时使用 |
 | [MCP](Surge/MCP.list) | 常见远程 MCP 服务：Figma、Notion、Linear、Sentry、Cloudflare 等 | 代理 |
 | [Web3](Surge/Web3.list) | 钱包与链上服务：MetaMask、Phantom、Keeper（原 Tonkeeper）、STON.fi、Getgems 等 | 代理 |
-| [TelegramCrypto](Surge/TelegramCrypto.list) | Telegram 生态的钱包与加密服务：内置钱包 Money、Fragment、TON 官方、Walt（原 Wallet in Telegram） | 跟 Telegram 同一出口 |
+| [TelegramCrypto](Surge/TelegramCrypto.list) | Telegram 生态的加密货币服务：内置钱包 Money、Fragment、TON 官方、Walt（原 Wallet in Telegram） | 跟 Telegram 同一出口 |
 | [Broker](Surge/Broker.list) | 券商：富途 / moomoo、长桥、老虎、嘉信 | 按需 |
 | [HSBC](Surge/HSBC.list) | 汇丰全球站点，每日从 [KIDA-MNESIA/gadgets](https://github.com/KIDA-MNESIA/gadgets) 同步 | 按需 |
 | [HSBC-CN](Surge/HSBC-CN.list) | 汇丰中国站点，同上自动同步 | 直连 |

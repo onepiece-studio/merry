@@ -1,6 +1,6 @@
 # NAME: TelegramCrypto
 # UPDATED: 2026-11-10 19:42:56
-# Telegram 生态的钱包与加密服务: Telegram 内置钱包实际访问的域名, 以及 Telegram 自营 / 主导 / 原官方的加密服务
+# Telegram 生态的加密货币服务: Telegram 内置钱包实际访问的域名, 以及 Telegram 自营 / 主导 / 原官方的加密货币服务
 # 约定: 内置钱包主体走 MTProto, 由 Telegram 规则集覆盖, 这里只补直连的域名;
 #       TON 生态独立第三方 (Keeper、TonAPI、My Wallet、Getgems、STON.fi 等) 不收, 归 Web3
 
