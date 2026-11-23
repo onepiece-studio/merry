@@ -1,5 +1,5 @@
 # NAME: AI
-# UPDATED: 2026-10-18 00:00:00
+# UPDATED: 2026-11-23 15:41:09
 # 收录标准: 只收主流海外 AI 服务自身使用的域名, 国内厂商不收
 # 多服务共享且无法按 host 区分的基础设施, 仅在其服务于主流 AI 服务时兜底保留整域
 # Google 家另有子集 AI-Google.list, 与本文件的 Google 段逐条同步; 需单独控制 Google 出口时把它放在本 rule-set 之前
@@ -33,6 +33,7 @@ DOMAIN,openai-api.arkoselabs.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 
 # > Claude
+# Core
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
@@ -43,6 +44,23 @@ DOMAIN-SUFFIX,claude.site
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudemcpcontent.com
 DOMAIN-SUFFIX,claudeusercontent.com
+
+# CDN
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+
+# Auth
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+
+# Telemetry
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN,http-intake.logs.us5.datadoghq.com
+
+# IP
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR,153.61.224.0/22,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
 
 # > Cloudflare AI Gateway
 DOMAIN,gateway.ai.cloudflare.com

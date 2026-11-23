@@ -24,6 +24,15 @@ payload:
   - DOMAIN-SUFFIX,claudemcpclient.com
   - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,servd-anthropic-website.b-cdn.net
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN,browser-intake-us5-datadoghq.com
+  - DOMAIN,http-intake.logs.us5.datadoghq.com
+  - IP-CIDR,160.79.104.0/23,no-resolve
+  - IP-CIDR,153.61.224.0/22,no-resolve
+  - IP-CIDR6,2607:6bc0::/48,no-resolve
   - DOMAIN,gateway.ai.cloudflare.com
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,microsoftonline.com
