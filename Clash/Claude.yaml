@@ -1,0 +1,21 @@
+payload:
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,clau.de
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,claude.app
+  - DOMAIN-SUFFIX,claude.com
+  - DOMAIN-SUFFIX,claude.dev
+  - DOMAIN-SUFFIX,claude.site
+  - DOMAIN-SUFFIX,claudemcpclient.com
+  - DOMAIN-SUFFIX,claudemcpcontent.com
+  - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,servd-anthropic-website.b-cdn.net
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN,browser-intake-us5-datadoghq.com
+  - DOMAIN,http-intake.logs.us5.datadoghq.com
+  - DOMAIN,o1158394.ingest.us.sentry.io
+  - IP-CIDR,160.79.104.0/23,no-resolve
+  - IP-CIDR,153.61.224.0/22,no-resolve
+  - IP-CIDR6,2607:6bc0::/48,no-resolve
