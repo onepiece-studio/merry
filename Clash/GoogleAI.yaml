@@ -3,6 +3,13 @@ payload:
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN,robinfrontend-pa.googleapis.com
+  - DOMAIN,gemini.gstatic.com
+  - DOMAIN,geminiweb-pa.clients.google.com
+  - DOMAIN,geminiweb-pa.clients6.google.com
+  - DOMAIN,appsgenaiserver-pa.clients.google.com
+  - DOMAIN,appsgenaiserver-pa.clients6.google.com
+  - DOMAIN,appsgenaiserver-pa.googleapis.com
   - DOMAIN-SUFFIX,ai.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,deepmind.google
@@ -11,6 +18,7 @@ payload:
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-KEYWORD,aiplatform.googleapis.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
   - DOMAIN-SUFFIX,ai.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,makersuite.google.com
@@ -18,12 +26,23 @@ payload:
   - DOMAIN,ai.google.dev
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,waa-pa.clients6.google.com
+  - DOMAIN,cloudaicompanion.googleapis.com
+  - DOMAIN,aicode.googleapis.com
+  - DOMAIN,aida.googleapis.com
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
+  - DOMAIN-SUFFIX,notebook.google
+  - DOMAIN-SUFFIX,notebook.google.com
+  - DOMAIN,notebooklm-pa.googleapis.com
   - DOMAIN-SUFFIX,jules.google
   - DOMAIN-SUFFIX,jules.google.com
   - DOMAIN-SUFFIX,labs.google
+  - DOMAIN-SUFFIX,flow.google.com
+  - DOMAIN,aisandbox-pa.googleapis.com
   - DOMAIN,stitch.withgoogle.com
+  - DOMAIN,antigravity.google
+  - DOMAIN,antigravity-pa.googleapis.com
+  - DOMAIN,antigravity.googleapis.com
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,cloudcode-pa.googleapis.com
   - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com

@@ -1,19 +1,24 @@
 payload:
   - DOMAIN-SUFFIX,ai.com
+  - DOMAIN-SUFFIX,chat.com
   - DOMAIN-SUFFIX,chatgpt.com
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,chatgpt.site
-  - DOMAIN,chat.openai.com.cdn.cloudflare.net
+  - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
   - DOMAIN,openaiapi-site.azureedge.net
+  - DOMAIN,openaiassets.blob.core.windows.net
   - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+  - DOMAIN,openaicom.imgix.net
   - DOMAIN,openaicomproductionae4b.blob.core.windows.net
   - DOMAIN,production-openaicom-storage.azureedge.net
   - DOMAIN-SUFFIX,oaistatic.com
   - DOMAIN-SUFFIX,oaistatsig.com
   - DOMAIN-SUFFIX,oaiusercontent.com
   - DOMAIN,o33249.ingest.sentry.io
+  - DOMAIN,o33249.ingest.us.sentry.io
   - DOMAIN,openai-api.arkoselabs.com
   - DOMAIN-SUFFIX,chatgpt.livekit.cloud
+  - DOMAIN,crixet.com
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,claude.ai
@@ -30,6 +35,7 @@ payload:
   - DOMAIN,anthropic-com.ghost.io
   - DOMAIN,browser-intake-us5-datadoghq.com
   - DOMAIN,http-intake.logs.us5.datadoghq.com
+  - DOMAIN,o1158394.ingest.us.sentry.io
   - IP-CIDR,160.79.104.0/23,no-resolve
   - IP-CIDR,153.61.224.0/22,no-resolve
   - IP-CIDR6,2607:6bc0::/48,no-resolve
@@ -64,6 +70,13 @@ payload:
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN,robinfrontend-pa.googleapis.com
+  - DOMAIN,gemini.gstatic.com
+  - DOMAIN,geminiweb-pa.clients.google.com
+  - DOMAIN,geminiweb-pa.clients6.google.com
+  - DOMAIN,appsgenaiserver-pa.clients.google.com
+  - DOMAIN,appsgenaiserver-pa.clients6.google.com
+  - DOMAIN,appsgenaiserver-pa.googleapis.com
   - DOMAIN-SUFFIX,ai.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,deepmind.google
@@ -72,6 +85,7 @@ payload:
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-KEYWORD,aiplatform.googleapis.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
   - DOMAIN-SUFFIX,ai.dev
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,makersuite.google.com
@@ -79,12 +93,23 @@ payload:
   - DOMAIN,ai.google.dev
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,waa-pa.clients6.google.com
+  - DOMAIN,cloudaicompanion.googleapis.com
+  - DOMAIN,aicode.googleapis.com
+  - DOMAIN,aida.googleapis.com
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
+  - DOMAIN-SUFFIX,notebook.google
+  - DOMAIN-SUFFIX,notebook.google.com
+  - DOMAIN,notebooklm-pa.googleapis.com
   - DOMAIN-SUFFIX,jules.google
   - DOMAIN-SUFFIX,jules.google.com
   - DOMAIN-SUFFIX,labs.google
+  - DOMAIN-SUFFIX,flow.google.com
+  - DOMAIN,aisandbox-pa.googleapis.com
   - DOMAIN,stitch.withgoogle.com
+  - DOMAIN,antigravity.google
+  - DOMAIN,antigravity-pa.googleapis.com
+  - DOMAIN,antigravity.googleapis.com
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,cloudcode-pa.googleapis.com
   - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com

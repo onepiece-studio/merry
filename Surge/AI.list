@@ -1,22 +1,28 @@
 # NAME: AI
-# UPDATED: 2026-11-23 15:41:09
+# UPDATED: 2026-11-25 01:39:34
 # 收录标准: 只收主流海外 AI 服务自身使用的域名, 国内厂商不收
 # 多服务共享且无法按 host 区分的基础设施, 仅在其服务于主流 AI 服务时兜底保留整域
-# Google 家另有子集 AI-Google.list, 与本文件的 Google 段逐条同步; 需单独控制 Google 出口时把它放在本 rule-set 之前
-# Claude 另有子集 Claude.list, 与本文件的 Claude 段逐条同步; 需单独控制 Claude 出口时把它放在本 rule-set 之前
+# OpenAI.list 与本文件中对应的 OpenAI 条目逐条同步，需单独控制 OpenAI 出口时将其放在本规则集之前
+# GoogleAI.list 与本文件的 Google 段逐条同步，需单独控制 Google AI 出口时将其放在本规则集之前
+# Anthropic.list 与本文件的 Anthropic 段逐条同步，需单独控制 Anthropic 出口时将其放在本规则集之前
 # 兜底保留的共享 host: microsoftonline.com (Copilot 登录) / api.github.com (Copilot token) / oauth2.googleapis.com 与 apis.google.com (Gemini, Antigravity 登录)
 # 它们只在 URL 路径层面区分 AI 用途, Surge 对 HTTPS 匹配不到路径, 故整域保留
 
-# > ChatGPT
+# > ai.com
 DOMAIN-SUFFIX,ai.com
+
+# > ChatGPT
+DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.site
 
 # > Chat GPT API & CDN
-DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
 DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaiassets.blob.core.windows.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicom.imgix.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 
@@ -25,6 +31,7 @@ DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
 
 DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o33249.ingest.us.sentry.io
 
 # > Arkose 人机验证
 DOMAIN,openai-api.arkoselabs.com
@@ -32,7 +39,10 @@ DOMAIN,openai-api.arkoselabs.com
 # > ChatGPT Advanced Voice
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 
-# > Claude
+# > Prism
+DOMAIN,crixet.com
+
+# > Anthropic
 # Core
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,clau.de
@@ -56,6 +66,7 @@ DOMAIN,anthropic-com.ghost.io
 # Telemetry
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,o1158394.ingest.us.sentry.io
 
 # IP
 IP-CIDR,160.79.104.0/23,no-resolve
@@ -126,6 +137,15 @@ DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google
 DOMAIN-SUFFIX,gemini.google.com
+DOMAIN,robinfrontend-pa.googleapis.com
+DOMAIN,gemini.gstatic.com
+DOMAIN,geminiweb-pa.clients.google.com
+DOMAIN,geminiweb-pa.clients6.google.com
+
+# > Gemini in Google Workspace
+DOMAIN,appsgenaiserver-pa.clients.google.com
+DOMAIN,appsgenaiserver-pa.clients6.google.com
+DOMAIN,appsgenaiserver-pa.googleapis.com
 
 # > Google AI & DeepMind
 DOMAIN-SUFFIX,ai.google
@@ -142,6 +162,7 @@ DOMAIN-KEYWORD,aiplatform.googleapis.com
 
 # > Google AI Studio
 DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,ai.dev
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,makersuite.google.com
@@ -150,9 +171,17 @@ DOMAIN,ai.google.dev
 DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,waa-pa.clients6.google.com
 
+# > Gemini Code Assist / Android Studio
+DOMAIN,cloudaicompanion.googleapis.com
+DOMAIN,aicode.googleapis.com
+DOMAIN,aida.googleapis.com
+
 # > Google NotebookLM
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,notebook.google
+DOMAIN-SUFFIX,notebook.google.com
+DOMAIN,notebooklm-pa.googleapis.com
 
 # > Google Jules
 DOMAIN-SUFFIX,jules.google
@@ -160,11 +189,16 @@ DOMAIN-SUFFIX,jules.google.com
 
 # > Google Labs (Flow / Whisk / ImageFX)
 DOMAIN-SUFFIX,labs.google
+DOMAIN-SUFFIX,flow.google.com
+DOMAIN,aisandbox-pa.googleapis.com
 
 # > Google Stitch
 DOMAIN,stitch.withgoogle.com
 
 # > Google Antigravity
+DOMAIN,antigravity.google
+DOMAIN,antigravity-pa.googleapis.com
+DOMAIN,antigravity.googleapis.com
 DOMAIN,oauth2.googleapis.com
 DOMAIN,cloudcode-pa.googleapis.com
 DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com

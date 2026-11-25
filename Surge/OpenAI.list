@@ -1,0 +1,41 @@
+# NAME: OpenAI
+# UPDATED: 2026-11-25 01:39:34
+# 本清单与 AI.list 中对应的 OpenAI 条目逐条同步。
+# 如需单独指定 OpenAI 的出口，把 RULE-SET OpenAI 放在 RULE-SET AI 之前。
+
+# > ChatGPT
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.site
+
+# > Chat GPT API & CDN
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaiassets.blob.core.windows.net
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicom.imgix.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,oaiusercontent.com
+
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o33249.ingest.us.sentry.io
+
+# > Arkose 人机验证
+DOMAIN,openai-api.arkoselabs.com
+
+# > ChatGPT Advanced Voice
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+
+# > Prism
+DOMAIN,crixet.com
+
+# > Azure OpenAI
+DOMAIN-SUFFIX,openai.azure.com
+
+# > Sora
+DOMAIN-SUFFIX,sora.com

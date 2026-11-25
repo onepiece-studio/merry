@@ -18,6 +18,8 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 
 在这个前缀后面接上规则文件路径即可，例如 `Surge/AI.list` 或 `Clash/AI.yaml`。
 
+已有订阅请将文件名中的 `AI-Google` 改为 `GoogleAI`、`Claude` 改为 `Anthropic`，目录和扩展名沿用原值。
+
 | 情况 | 处理方式 |
 |---|---|
 | 主站偶尔访问异常 | 把域名换成 `fastly.jsdelivr.net`，路径不变 |
@@ -28,8 +30,9 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 | 规则 | 用途 | 建议策略 |
 |---|---|---|
 | [AI](Surge/AI.list) | 主流海外 AI 服务：ChatGPT、Claude、Gemini、Copilot、Cursor、OpenHands、Together 等 | 代理 |
-| [AI-Google](Surge/AI-Google.list) | AI 规则中的 Google 部分：Gemini、AI Studio、NotebookLM、Jules、Antigravity、Vertex AI | 需要让 Google AI 单独走一个节点时使用 |
-| [Claude](Surge/Claude.list) | AI 规则中的 Claude 部分：claude.ai、Claude Code、Anthropic API、MCP 小组件、artifact 分享页 | 需要让 Claude 单独走一个节点时使用 |
+| [OpenAI](Surge/OpenAI.list) | ChatGPT、OpenAI API、CDN、人机验证、高级语音、Azure OpenAI 和 Sora | 需要让 OpenAI 服务单独走一个节点时使用 |
+| [GoogleAI](Surge/GoogleAI.list) | AI 规则中的 Google 部分：Gemini、AI Studio、NotebookLM、Jules、Antigravity、Vertex AI | 需要让 Google AI 单独走一个节点时使用 |
+| [Anthropic](Surge/Anthropic.list) | AI 规则中的 Anthropic 服务：claude.ai、Claude Code、Anthropic API、MCP 小组件、artifact 分享页 | 需要让 Anthropic 服务单独走一个节点时使用 |
 | [MCP](Surge/MCP.list) | 常见远程 MCP 服务：Figma、Notion、Linear、Sentry、Cloudflare 等 | 代理 |
 | [Web3](Surge/Web3.list) | 钱包与链上服务：MetaMask、Phantom、Keeper（原 Tonkeeper）、STON.fi、Getgems 等 | 代理 |
 | [TelegramCrypto](Surge/TelegramCrypto.list) | Telegram 生态的加密货币服务：内置钱包 Money、Fragment、TON 官方、Walt（原 Wallet in Telegram） | 跟 Telegram 同一出口 |
@@ -49,20 +52,21 @@ Clash 用户把路径中的 `Surge/xxx.list` 换成 `Clash/xxx.yaml` 即可，�
 
 ## Surge
 
-在 `[Rule]` 中引用。Surge 自上而下匹配，命中第一条就停止，所以 AI-Google 和 Claude 要放在 AI 前面：
+在 `[Rule]` 中引用。Surge 自上而下匹配，命中第一条就停止，所以 OpenAI、GoogleAI 和 Anthropic 要放在 AI 前面。
 
 ```
-RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/AI-Google.list,Google
-RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Claude.list,Claude
+RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/OpenAI.list,OpenAI
+RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/GoogleAI.list,Google
+RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Anthropic.list,Claude
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/AI.list,AI
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/MCP.list,Proxy
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Security.list,REJECT
 RULE-SET,https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/PCDN.list,REJECT-NO-DROP,extended-matching
 ```
 
-如果不需要把 Google AI 或 Claude 分开，只引用 AI 一条即可，它已经包含两者的全部条目。
+如果这些服务共用 AI 出口，只引用 AI 一条即可，它已经包含 OpenAI、GoogleAI 和 Anthropic 的全部条目。
 
-引用 AI-Google 后，Google 账号通用的 `oauth2.googleapis.com` 和 `apis.google.com` 也会走 Google 节点。Gemini 和 Antigravity 登录依赖这两个域名，Surge 无法按 URL 路径区分，让它们与其他 Google 账号流量走同一节点也更稳定。
+引用 GoogleAI 后，Google 账号通用的 `oauth2.googleapis.com` 和 `apis.google.com` 也会走 Google 节点。Gemini 和 Antigravity 登录依赖这两个域名，Surge 无法按 URL 路径区分，让它们与其他 Google 账号流量走同一节点也更稳定。
 
 HSBC-CN 要放在 HSBC 之前，顺序反了汇丰中国站点就会走代理。渣打不分中国与全球：渣打中国官网 `www.sc.com/cn/` 与全球站同域名，只按路径区分，按域名拆不开，所以只有一份规则。
 
