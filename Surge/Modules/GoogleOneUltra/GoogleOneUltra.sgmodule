@@ -1,0 +1,8 @@
+#!name=Google One Ultra 焚诀
+#!desc=需要启用 MITM。仅供授权测试，禁止违法或商业使用。使用风险与免责条款见仓库 README。
+
+[Script]
+MerryGoogleOneUltra = type=http-response,pattern=^https://one\.google\.com/ai(?:\?.*)?$,requires-body=true,max-size=10485760,script-path=https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Modules/GoogleOneUltra/GoogleOneUltra.js
+
+[MITM]
+hostname = %APPEND% one.google.com

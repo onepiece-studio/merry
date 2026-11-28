@@ -1,10 +1,12 @@
 # merry
 
-Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、Telegram 加密货币、券商、汇丰、输入法、IP 检测站点、高风险域名和 B 站 PCDN 节点。规则以 Surge 格式维护，Clash 格式自动生成，两者内容一致。
+Surge 与 Clash 通用的分流规则集，覆盖 AI 服务、MCP、Web3、Telegram 加密货币、券商、银行、输入法、IP 检测站点、高风险域名和 B 站 PCDN 节点。规则以 Surge 格式维护，Clash / Mihomo 的规则文件由脚本生成。仓库另附按需启用的 Surge 测试模块。
 
-## 订阅地址
+## 分流规则
 
-所有规则通过 jsDelivr CDN 分发，中国大陆可直接访问：
+### 订阅地址
+
+规则订阅使用 jsDelivr CDN，地址前缀如下。
 
 ```
 https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/
@@ -25,7 +27,7 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 | 主站偶尔访问异常 | 把域名换成 `fastly.jsdelivr.net`，路径不变 |
 | 想拿到刚更新的规则 | CDN 有最多约 12 小时的缓存。改用 GitHub 原始地址 `https://raw.githubusercontent.com/onepiece-studio/merry/main/` 可以立即拿到最新内容，但中国大陆通常无法直连 |
 
-## 分流规则
+### 规则清单
 
 | 规则 | 用途 | 建议策略 |
 |---|---|---|
@@ -50,7 +52,7 @@ https://cdn.jsdmirror.com/gh/onepiece-studio/merry@main/
 
 Clash 用户把路径中的 `Surge/xxx.list` 换成 `Clash/xxx.yaml` 即可，文件名一一对应。
 
-## Surge
+### Surge
 
 在 `[Rule]` 中引用。Surge 自上而下匹配，命中第一条就停止，所以 OpenAI、GoogleAI 和 Anthropic 要放在 AI 前面。
 
@@ -74,7 +76,7 @@ IPCheck 要放在所有代理大清单之前，因为 whoer.net、ping0.cc 这�
 
 PCDN 要放在所有国内直连 / 媒体规则集之前，例如 blackmatrix7 的 Direct、BiliBili、ChinaMedia 以及 `GEOSITE,CN` / `GEOIP,CN`，因为这些集合包含 bilivideo.com、szbdyd.com 等后缀，顺序反了 PCDN 节点会被直连放行。策略用 `REJECT-NO-DROP`：`REJECT-DROP` 静默丢包，客户端要等超时才回落，起播变慢；普通 `REJECT` 在高频重试下会被 Surge 自动升级为 DROP。`extended-matching` 让规则同时匹配 SNI 与 HTTP Host，App 在 TCP 80 / 443 上直接用 IP 连接时也能命中。收录要求至少两个独立来源确认是 PCDN / P2P，且没有拦截后功能损坏的报告，当前只覆盖 B 站。它只覆盖域名形式的节点，IP:端口形式的 PCDN 和 WebRTC 直连拦不到；`extended-matching` 只在 TCP 80 / 443 上嗅探 SNI 与 HTTP Host，App 直接用 IP 连接非标准端口（如 B 站 MCDN 常用的 4483、8082）或走 QUIC 时同样拦不到，经 Surge DNS 解析、带主机名的连接则不受端口和协议限制；个别地区的个别视频只下发 MCDN 地址时，可能无法播放。
 
-## Clash / Mihomo
+### Clash / Mihomo
 
 通过 `rule-providers` 引用 `Clash/` 目录下的同名文件：
 
@@ -92,25 +94,42 @@ rules:
   - RULE-SET,AI,AI
 ```
 
-## 收录标准
+### 收录标准
 
-以 AI 规则为例，其余同理：
+以下以 AI 规则集为例，说明域名的收录范围和匹配方式。
 
 - 只收该服务自身使用的域名。中国大陆厂商不收，直连即可。
 - 只收主流服务。小众或热度已退的不收；纯本地工具没有自己的服务器，也无需收录。
 - 多个服务共用、无法按域名拆开的基础设施，只在它服务于主流 AI 服务时整域保留，否则收窄到精确域名或删除。
 - 完整域名用 `DOMAIN`，多级子域用 `DOMAIN-SUFFIX`，只有形如 `{region}-aiplatform.googleapis.com` 这类前缀主机才用 `DOMAIN-KEYWORD`。
 
+## Surge 测试模块
+
+[Google One Ultra 焚诀](Surge/Modules/GoogleOneUltra/GoogleOneUltra.sgmodule) 会将 `one.google.com` 加入 Surge 的 MITM 主机列表。启用 MITM 并信任证书后，Surge 可解密该主机的 HTTPS 流量。响应脚本仅匹配 `/ai` 路径，可带查询参数，并会改写响应正文中的套餐标识。
+
+**使用限制与免责声明**（适用于本模块及其配套脚本）
+
+- 仅供在已获相应授权的范围内进行测试。使用者须遵守适用法律法规及相关服务条款。不得用于违法活动或任何商业用途，包括销售、付费分发或提供有偿服务。
+- 测试可能改变页面显示的套餐信息。实际订阅权益和费用以服务提供方的订阅记录及账单为准。
+- 模块及脚本按现状提供，维护者不保证测试结果准确或功能持续可用。使用者应自行评估测试风险。在适用法律允许的范围内，维护者对因使用本模块或脚本造成的损失不承担责任。
+
+在 Surge iOS 的「模块」中通过下面的 URL 安装并启用。模块会加载远程脚本，响应体上限为 10 MiB。使用 HTTPS 响应脚本需开启脚本和 MITM，并在设备上信任自己的 Surge CA 证书。
+
+```text
+https://cdn.jsdelivr.net/gh/onepiece-studio/merry@main/Surge/Modules/GoogleOneUltra/GoogleOneUltra.sgmodule
+```
+
 ## 维护
 
-```
-Surge/      规则源文件；HSBC、HSBC-CN、StandardChartered、IBKR、Wise 每日从上游同步，其余手工维护
-Clash/      由 Scripts/convert.sh 生成，GitHub Actions 自动提交，不要手改
-Scripts/    转换脚本
-.github/    convert.yml 在 Surge 变更后生成 Clash；syncUpstream.yml 每日同步上游规则
-```
+| 路径 | 用途与维护方式 |
+|---|---|
+| `Surge/*.list` | 分流规则源文件。HSBC、HSBC-CN、StandardChartered、IBKR 和 Wise 每日从上游同步，其余规则手工维护。 |
+| `Clash/*.yaml` | [转换脚本](Scripts/convert.sh) 根据同名 Surge 规则集生成。需要调整规则时，修改对应的 `.list` 源文件。 |
+| `Surge/Modules/` | 可选的 Surge 模块。每个模块的 `.sgmodule` 配置和配套 JS 放在同一子目录，独立于分流规则转换流程。 |
 
-本地验证转换：
+[同步工作流](.github/workflows/syncUpstream.yml) 每日更新上游规则。[转换工作流](.github/workflows/convert.yml) 在 `main` 收到 `Surge/*.list` 的变更或上游同步成功后运行，并自动提交 `Clash/` 中的变更。
+
+在仓库根目录运行以下命令可重新生成 Clash 规则文件，生成后用 `git diff -- Clash/` 查看差异。
 
 ```bash
 bash Scripts/convert.sh
